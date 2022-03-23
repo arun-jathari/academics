@@ -1,0 +1,19 @@
+import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+x_axis = np.arange(-10, 10, 0.001)
+
+avg = 0
+std = 1
+
+pdf = stats.norm.pdf(x_axis, avg, std)
+plt.plot(x_axis, pdf)
+
+std_lim = 1.96 # 95% CI
+low = avg-std_lim*std
+high = avg+std_lim*std
+
+plt.fill_between(x_axis, pdf, where=(low < x_axis) & (x_axis < high))
+plt.text(low, 0, low, ha='center')
+plt.text(high, 0, high, ha='center')

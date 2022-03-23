@@ -1,0 +1,7 @@
+from scipy.integrate import quad
+def normalProababilityDensity(x):
+    constant = 1.0/np.sqrt(2*np.pi)
+    return (constant*np.exp((-x**2)/2.0))
+
+result, __ = quad(normalProababilityDensity,-1,1,limit=1000)
+print(result)

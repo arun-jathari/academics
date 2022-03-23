@@ -1,0 +1,5 @@
+# Graph of pmf of Binomial distribution - left skewed
+import pandas as pd
+df = pd.DataFrame({"X":[0,1,2,3,4],"Y":[0.0016,0.0256,0.1536,0.4096,0.4096]})
+ax = df.plot(x='X',y='Y',kind='bar')
+ax.legend(['n=4, p=0.8'])

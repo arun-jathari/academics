@@ -1,0 +1,10 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.DataFrame({'X':[0,1,2,3,4],'Cum Prob':[0,1/4,3/4,7/8,1]})
+# df.plot.line(x='X',y='Cum Prob')
+plt.step(x='X',y='Cum Prob',data=df,where='post')
+plt.xticks(df.X)
+plt.xlabel('a',size=20)
+plt.ylabel('F(a)',size=20)
+plt.title('Cumulative distribution',size=20)
+plt.show()

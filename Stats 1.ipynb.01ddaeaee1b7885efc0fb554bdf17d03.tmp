@@ -1,0 +1,5 @@
+# Graph of pmf of Binomial distribution - symmetric
+import pandas as pd
+df = pd.DataFrame({"X":[0,1,2,3,4],"Y":[0.0625,0.25,0.375,0.25,0.0625]})
+ax = df.plot(x='X',y='Y',kind='bar')
+ax.legend(['n=4, p=0.5'])

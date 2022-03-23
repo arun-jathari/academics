@@ -1,0 +1,25 @@
+# Import libraries
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd 
+ 
+# Creating dataset
+cars = ['AUDI', 'BMW', 'FORD',
+        'TESLA', 'JAGUAR', 'MERCEDES']
+ 
+data = [23, 17, 35, 29, 12, 41]
+df1 = pd.DataFrame({'cars':cars,'data':data}).sort_values(by='data',ascending=False)
+df2 = pd.DataFrame({'Size':['Small','Medium','Large'],'Freq':[7,8,5]})
+ 
+# Creating plot
+fig, ax = plt.subplots(1,2,figsize=(10,5))
+ax[0].bar(x = df1.cars,height = df1.data)
+ax[1].bar(x=df2.Size,height=df2.Freq)
+
+# plot accessories
+ax[0].set_xticks(df1.cars,df1.cars,rotation=90)
+ax[0].set_title('Pareto Charts (Nominal Data)')
+ax[1].set_title('Pareto Charts (Ordinal Data)')
+
+# show plot
+plt.show()
