@@ -1,4 +1,0 @@
-# p.m.f
-import pandas as pd
-df = pd.DataFrame({'X':[0,1,2],'Probability':[0.5,0.25,0.25]})
-df.plot.bar(x='X',y='Probability',rot=0)
